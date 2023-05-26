@@ -1,7 +1,11 @@
 public class Main{
 	public static void main(String[] args){
 		User user = new User("Bob");
-		user.report();
-		user.save();
+
+		Saveable saveable = new Persister(user);
+		saveable.save();
+
+		Indicateable indicateable = new IndicateUser(user);
+		indicateable.indicate();
 	}
 }
